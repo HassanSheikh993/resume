@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/027eebf8db.js" crossorigin="anonymous"></script>
+    
+    <title>Portfolio</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:"Poppins" ;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .container{
+            height: 100%;
+            width: 100%;
+        }
+        nav{
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2vw 5vw;
+            box-shadow: 0px 5px 50px #91BDC3;
+        }
+        .nav_links{
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .nav_links a{
+            font-size: 16px;
+        }
+        nav h1{
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+        nav .icon{
+            display: none;
+        }
+        .nav_links a:hover{
+            color: #91BDC3;
+            font-weight: bold;
+        }
+        nav h1:hover{
+            color: #91BDC3;
+        }
+
+
+/* ----------------------------------------- */
+.section_one{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.details{
+    height: 100%;
+    width: 50%;
+    padding: 4vw 5vw;
+    line-height: 35px;
+    font-size: 2.2vw;
+}
+span{
+    /* color: #91BDC3; */
+    color: #00b4d8;
+    font-weight: bold;
+}
+
+.section_one_link{
+    font-size: 1.1vw;
+    border: 2px solid black;
+    padding: 8px 8px;
+}
+.section_one_link:hover{
+    background-color: #91BDC3;
+    color: white;
+    border: 2px solid white;
+}
+
+.picture{
+    height: 100%;
+    width: 50%;
+    padding-left: 9vw;
+}
+/* ------------------------------------------------------------- */
+.drop_down_menu{
+    height: 180px;
+    width: 120px;
+    display: none;
+}
+.drop_down_menu a{
+    color:white;
+    font-weight: bold;
+}
+.drop_down_menu_shown{
+    display: flex;
+    flex-direction: column;
+    padding: 25px 5px;
+    text-align: center;
+    background-color: #91BDC3cc;
+    position: absolute;
+    top: 60px;
+    right: 0%;
+    border-radius: 10px;
+    line-height: 30px;
+    transition: 3.s;
+}
+/* ------------------------------------------------------------- */
+.section_two{
+    font-size: 18px;
+    padding: 2vw 5vw;
+    /* background-image: linear-gradient(to right, #caf0f8 , #00b4d8); */
+    margin-top: 40px;
+    box-shadow: 0px -10px 50px #91BDC3;
+}
+.about{
+    background-color: white;
+    line-height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.about_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about_paragraph{
+    display: none;
+    font-size: 16px;
+}
+.about_shown{
+    display: block;
+}
+.arrow_icon{
+    display: none;
+}
+
+/* ---------------------------------------- */
+#work_main{
+    margin-top: 40px;
+}
+/* ------------------------------------------ */
+.work{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    text-align: center;
+    justify-content: space-around;
+
+}
+.rentAcar{
+    height: 100%;
+    width: 40%;
+}
+.work_img{
+    padding: 5px;
+}
+
+.work_img img{
+    height: 100%;
+    width: 100%;
+}
+
+.work_top h2{
+    margin-bottom: 20px;
+}
+
+.workDetails{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.workDetailsShown{
+    max-height: 700px;
+}
+.work_btn{
+    padding: 10px 20px ;
+    cursor: pointer;
+    border-style: none;
+    font-size: 1vw;
+}
+.work_btn:hover{
+    background-color: #91BDC3;
+    color: white;
+}
+/* ----------------------------------------- */
+.certificate{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 90px;
+    padding-top: 30px;
+}
+#certifications_main{
+    margin-top: 40px;
+}
+
+/* --------------------------------------------- */
+#internship_main{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/* -------------------------------------------- */
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+}
+.footer_icon{
+    margin-top: 30px;
+    display: flex;
+    gap: 40px;
+}
+
+.arrow_icon_rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+/* ------------------------------- */
+@media screen and (max-width: 870px) {
+    .nav_links{
+            display: none;
+        }
+        nav .icon{
+            display: block;
+        }
+        .details{
+            font-size: 3.2vw;
+        }
+}
+/* ---------------------------------------------------------------- */
+
+        @media screen and (max-width: 620px) {
+        .nav_links{
+            display: none;
+        }
+        nav .icon{
+            display: block;
+        }
+        /* --------------- */
+        .section_one_span{
+            font-size: 6vw;
+        }
+        /* -------------- */
+        .section_one{
+            flex-direction: column;
+        }
+        .details,.picture{
+            width: 100%;
+        }
+       .picture{
+        display: flex;
+        justify-content: center;
+        padding-left: 0px;
+       }
+       .details{
+        font-size: 5vw;
+       }
+       .details_links{
+        padding: 0;
+       }
+       .details_link{
+        font-size: 3.1vw;
+       border-style: none;
+       }
+       /* --------------------------------- */
+       .arrow_icon{
+        display: block;
+       }
+       /* -------------------------------- */
+       .work{
+        flex-direction: column;
+       }
+       .rentAcar{
+        width: 100%;
+       }
+       .work_btn{
+        position: relative;
+        bottom: 10px;
+        font-size: 8px;
+       }
+       .work_btn:active{
+    background-color: #91BDC3;
+    color: white;
+}
+       /* -------------------------------- */
+       .certificate{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+       /* --------------------------------- */
+       footer{
+        text-align: center;
+       }
+       footer p{
+        padding: 0px 5px;
+       }
+       /* ---------------------------------------- */
+       .about_paragraph {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.about_shown {
+    max-height: 5000px; /* Set a max-height large enough to cover your content */
+}
+
+.transition {
+    transition: max-height 0.3s ease;
+}
+
+.transition_reverse {
+    transition: max-height 0.2s ease;
+}
+/* ------------------------------- */
+.section_one_link{
+    display: flex;
+    justify-content: center;
+    font-size: 3.5vw;
+    border: 2px solid black;
+    font-weight: bold;
+}
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>Portfolio</h1>
+            <div class="nav_links">
+                <a href="#about_main">About</a>
+                <a href="#work_main">My Work</a>
+                <a href="#certifications_main">Certificate</a>
+                <a href="#internship_main">Internship</a>
+                <a href="#footer_main">Contact Me</a>
+            </div>
+            <i class="icon fa-solid fa-bars fa-xl"></i>
+            <div class="drop_down_menu">
+                <a href="#about_main">About</a>
+                <a href="#work_main">My Work</a>
+                <a href="#certifications_main">Certificate</a>
+                <a href="#internship_main">Internship</a>
+                <a href="#footer_main">Contact Me</a>
+           </div>
+        </nav>
+
+        <section class="section_one">
+            <div class="details">
+                <pre>
+Hello my name is 
+<span class="section_one_span">Hassan Sheikh</span>
+and i am a Software Engineer
+                </pre>
+                <!-- <div class="one"><a href="#about_main" class="details_link">Learn More</a></div> -->
+                <a href="#about_main" class="section_one_link" class="details_link">Learn More</a>
+
+            </div>
+
+            <div class="picture">
+<img src="portfolio.png" alt="" height="300px">
+            </div>
+        </section>
+
+
+        <!-- ------------------------------------------ -->
+
+        <section class="section_two">
+            <div class="about" id="about_main">
+                <div class="about_top">
+                    <h2>About</h2>
+                <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
+                </div>
+                <div class="about_paragraph about_shown">
+                    I'm Sheikh Muhammad Hassan, a sixth-semester Software Engineering student at NUML University. I have skills in C++ (DSA), Java (including Swing), and Python. In web development, I'm proficient in HTML, CSS, JavaScript, Node.js, and have some experience with PHP for backend development. I also use GitHub and have basic knowledge of Linux (Ubuntu).
+                </div>
+            </div>
+<!-- --------------------------------------------------------- -->
+
+<!-- use same about class here because i am using the same css here that i use in actual about (above) -->
+            <div class="about" id="work_main">
+                <div class="about_top work_top">
+                    <h2>My Work</h2>
+                <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
+                </div>
+
+                <div class="about_paragraph about_shown">
+                    <div class="work">
+
+                        <div class="rentAcar">
+                            <h3>CorporateHub</h3>
+                            <div class="work_img"><a href=""><img src="java project.PNG" alt=""></a></div>
+                            <button class="btn work_btn">learn more</button>
+                            <div class="workDetails">
+                                <p>This is an independent project that show my development skills in creating "company management system" from scratch. Utilizing java for both frontend and backend development the system is also connects to a database (JDBC).</p>
+                            </div>
+                        </div>
+    
+                        <div class="rentAcar">
+                            <h3>Inventory-Tracking-Management-system</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/Inventory-Tracking-Management-system" target="_blank"><img src="dsa project.PNG" alt=""></a></div>
+                            <button class="btn work_btn">learn more</button>
+                            <div class="workDetails">
+                                <p>About
+                                    This is an Group project of 3 semester "Inventory Tracking/Management system" . Utilizing DSA in C++ for development the system.</p>
+                            </div>
+                        </div>
+    
+                        <div class="rentAcar">
+                            <h3>Rent a Car</h3>
+                            <div class="work_img"><a href=""><img src="rent a car.PNG" alt=""></a></div>
+                            <button class="btn work_btn">learn more</button>
+                            <div class="workDetails">
+                                <p>I developed a Rent-A-Car front-end website utilizing HTML, CSS, JavaScript, and jQuery. The project incorporates both grid and flex layouts for responsive and adaptive design. JavaScript and jQuery are used for dynamic content and DOM manipulation to enhance user interactions. The website showcases my skills in creating interactive and visually appealing web pages.</p>
+                            </div>
+                        </div>
+
+                        <div class="rentAcar">
+                            <h3>CognoRise-Infotech</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech" target="_blank"><img src="python project.PNG" alt=""></a></div>
+                            <button class="btn work_btn">learn more</button>
+                            <div class="workDetails">
+                                <p>During my internship at CognoRise-Infotech, I developed several basic Python programs to enhance my skills. These projects included a password generator, a dice rolling simulator, a Rock-Paper-Scissors game, and a calculator. These projects helped me practice fundamental programming concepts and improve my coding abilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="rentAcar">
+                            <h3>Password generator</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech/blob/main/Password_generator.py" target="_blank"><img src="password_generator.jpg" alt=""></a></div>
+                            <button class="btn work_btn">learn more</button>
+                            <div class="workDetails">
+                                <p>The password generator program is written in Python and creates strong, customizable passwords. It uses lists of alphabets, capital letters, numbers, and special characters to generate passwords based on user-defined length and complexity. Users can choose between "easy," "normal," and "hard" difficulty levels, each with different proportions of character types. The program ensures that the generated password meets the length and complexity requirements by filling in any remaining characters. Finally, it shuffles the characters to create a secure password and prints the result.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="rentAcar">
+                            <h3>Coffee Machine</h3>
+                            <div class="work_img"><a href="" target="_blank"><img src="coffee mechine project.jpg" alt=""></a></div>
+                            <button class="btn work_btn">learn more</button>
+                            <div class="workDetails">
+                                <p>This Python program simulates a coffee machine that offers three types of drinks: latte, black coffee, and ice coffee. The program keeps track of available resources (water, coffee, milk) and calculates the cost of each drink. Users can place orders, check the availability of resources, and view the total profit made. The program ensures that sufficient resources are available before making a drink and handles payment transactions, including giving back change if necessary.</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- -------------------------------------------- -->
+                <div class="about" id="certifications_main">
+                    <div class="about_top">
+                        <h2>Licenses & certifications</h2>
+                    <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
+                    </div>
+                    <div class="certificate">
+                        <div class="certificate_img">
+                 <img src="Sheikh Muhammad Hassan - Python.png" alt="" height="160px">
+                        </div>
+                        <div class="about_paragraph about_shown">
+                            <h3>Python By kaggle</h3>
+                            <p>I completed a comprehensive Python course on Kaggle, which covered the fundamentals of Python programming. This course included essential topics such as how Python works, functions, loops, and list comprehensions, as well as working with lists, strings, and dictionaries. Additionally, it provided an introduction to using external libraries, equipping me with a solid understanding of Python's core concepts and practical applications.</p>
+                        </div>
+                    </div>      
+                </div>
+                <!-- ---------------------------------------------------- -->
+                <div class="about" id="internship_main">
+                    <div class="about_top">
+                        <h2>Internships</h2>
+                    <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
+                    </div>
+                    <div class="certificate">
+                        <div class="certificate_img">
+                 <img src="Certificate (1) (1).jpg" alt="" height="300px">
+                        </div>
+                        <div class="about_paragraph about_shown">
+                            <h3>Interns Pakistan</h3>
+                            <p>I completed a front-end development internship at Interns Pakistan, where I honed my skills in HTML, CSS, JavaScript, and PHP. During this internship, I also learned jQuery and practiced making websites responsive. This experience provided me with practical knowledge in building user-friendly and visually appealing web pages, enhancing my web development capabilities significantly.</p>
+                        </div>
+                    </div>      
+                </div>
+        </section>
+        <!-- ------------------------------------------------------- -->
+         <footer id="footer_main">
+            <h3>Hassan Portfolio</h3>
+            <p>Feel free to contact me through the following platforms</p>
+            <div class="footer_icon">
+                <a href="https://www.instagram.com/its_hassan_09/" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                <a href="https://github.com/HassanSheikh993" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
+           <a href="https://www.linkedin.com/in/hassan-sheikh993/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+           <a href=""><i class="fa-brands fa-discord fa-xl"></i></a>
+            </div>
+         </footer>
+    </div>
+</body>
+
+
+<script>
+//     let aboutElements = document.querySelectorAll(".about");
+//     aboutElements.forEach(about => {
+//         const arrow_icon = about.querySelector(".arrow_icon");
+//         const paragraph = about.querySelector(".about_paragraph");
+
+//         arrow_icon.addEventListener("click",()=>{
+//             paragraph.classList.toggle("about_shown");
+//             paragraph.classList.remove("transition_reverse");
+//             paragraph.classList.add("transition");
+//             arrow_icon.classList.toggle("arrow_icon_rotate");
+//         });
+//     });
+    
+//     document.querySelectorAll(".arrow_icon").forEach(icon => {
+//     icon.addEventListener("touchstart", (e) => {
+//         e.preventDefault(); // Prevent default touch behavior
+//         icon.classList.toggle("arrow_icon_rotate");
+//     });
+// });
+    // ------------------------------------
+document.querySelectorAll(".about").forEach(about => {
+    const arrow_icon = about.querySelector(".arrow_icon");
+    const paragraph = about.querySelector(".about_paragraph");
+
+    arrow_icon.addEventListener("click", () => {
+        paragraph.classList.toggle("about_shown");
+        paragraph.classList.remove("transition_reverse");
+        paragraph.classList.add("transition");
+        arrow_icon.classList.toggle("arrow_icon_rotate");
+    });
+
+    arrow_icon.addEventListener("touchstart", (e) => {
+        e.preventDefault(); // Prevent default touch behavior
+        paragraph.classList.toggle("about_shown");
+        paragraph.classList.remove("transition_reverse");
+        paragraph.classList.add("transition");
+        arrow_icon.classList.toggle("arrow_icon_rotate");
+    });
+});
+
+    // -----------------------------------
+
+    let dropDownMenu = document.querySelector(".drop_down_menu");
+    let iconButton = document.querySelector(".icon");
+
+    iconButton.addEventListener("click",()=>{
+        dropDownMenu.classList.toggle("drop_down_menu_shown")
+    })
+
+    let rentAcar = document.querySelectorAll(".rentAcar");
+
+    rentAcar.forEach(rent=>{
+        const btn = rent.querySelector(".btn")
+        const details = rent.querySelector(".workDetails");
+        btn.addEventListener("click",()=>{
+        details.classList.toggle("workDetailsShown");
+        })
+    })
+
+//   --------------------------------------------
+
+
+
+  
+</script>
+
+</html>
