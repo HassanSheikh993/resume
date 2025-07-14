@@ -4,347 +4,576 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/027eebf8db.js" crossorigin="anonymous"></script>
-    
     <title>Portfolio</title>
     <style>
-        *{
+        :root {
+            --primary-color: #00b4d8;
+            --secondary-color: #90e0ef;
+            --accent-color: #0077b6;
+            --dark-color: #03045e;
+            --light-color: #caf0f8;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 180, 216, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family:"Poppins" ;
+            font-family: "Poppins", sans-serif;
         }
-        a{
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
             text-decoration: none;
-            color: black;
+            color: inherit;
+            transition: var(--transition);
         }
-        .container{
+
+        .container {
             height: 100%;
             width: 100%;
+            overflow-x: hidden;
         }
-        nav{
-            height: 60px;
+
+        /* Navigation */
+        nav {
+            height: 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2vw 5vw;
-            box-shadow: 0px 5px 50px #91BDC3;
+            padding: 0 5vw;
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition);
         }
-        .nav_links{
+
+        nav.scrolled {
+            height: 70px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav_links {
             width: 50%;
             display: flex;
             justify-content: space-evenly;
         }
-        .nav_links a{
+
+        .nav_links a {
             font-size: 16px;
-        }
-        nav h1{
-            font-size: 28px;
-            letter-spacing: 2px;
-        }
-        nav .icon{
-            display: none;
-        }
-        .nav_links a:hover{
-            color: #91BDC3;
-            font-weight: bold;
-        }
-        nav h1:hover{
-            color: #91BDC3;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
         }
 
-
-/* ----------------------------------------- */
-.section_one{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-.details{
-    height: 100%;
-    width: 50%;
-    padding: 4vw 5vw;
-    line-height: 35px;
-    font-size: 2.2vw;
-}
-span{
-    /* color: #91BDC3; */
-    color: #00b4d8;
-    font-weight: bold;
-}
-
-.section_one_link{
-    font-size: 1.1vw;
-    border: 2px solid black;
-    padding: 8px 8px;
-}
-.section_one_link:hover{
-    background-color: #91BDC3;
-    color: white;
-    border: 2px solid white;
-}
-
-.picture{
-    height: 100%;
-    width: 50%;
-    padding-left: 9vw;
-}
-/* ------------------------------------------------------------- */
-.drop_down_menu{
-    height: 180px;
-    width: 120px;
-    display: none;
-}
-.drop_down_menu a{
-    color:white;
-    font-weight: bold;
-}
-.drop_down_menu_shown{
-    display: flex;
-    flex-direction: column;
-    padding: 25px 5px;
-    text-align: center;
-    background-color: #91BDC3cc;
-    position: absolute;
-    top: 60px;
-    right: 0%;
-    border-radius: 10px;
-    line-height: 30px;
-    transition: 3.s;
-}
-/* ------------------------------------------------------------- */
-.section_two{
-    font-size: 18px;
-    padding: 2vw 5vw;
-    /* background-image: linear-gradient(to right, #caf0f8 , #00b4d8); */
-    margin-top: 40px;
-    box-shadow: 0px -10px 50px #91BDC3;
-}
-.about{
-    background-color: white;
-    line-height: 40px;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.about_top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.about_paragraph{
-    display: none;
-    font-size: 16px;
-}
-.about_shown{
-    display: block;
-}
-.arrow_icon{
-    display: none;
-}
-
-/* ---------------------------------------- */
-#work_main{
-    margin-top: 40px;
-}
-/* ------------------------------------------ */
-.work{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px 20px;
-    text-align: center;
-    justify-content: space-around;
-
-}
-.rentAcar{
-    height: 100%;
-    width: 40%;
-}
-.work_img{
-    padding: 5px;
-}
-
-.work_img img{
-    height: 100%;
-    width: 100%;
-}
-
-.work_top h2{
-    margin-bottom: 20px;
-}
-
-.workDetails{
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-.workDetailsShown{
-    max-height: 700px;
-}
-.work_btn{
-    padding: 10px 20px ;
-    cursor: pointer;
-    border-style: none;
-    font-size: 1vw;
-}
-.work_btn:hover{
-    background-color: #91BDC3;
-    color: white;
-}
-/* ----------------------------------------- */
-.certificate{
-    display: flex;
-    justify-content: space-between;
-    column-gap: 90px;
-    padding-top: 30px;
-}
-#certifications_main{
-    margin-top: 40px;
-}
-
-/* --------------------------------------------- */
-#internship_main{
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-/* -------------------------------------------- */
-footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0px;
-}
-.footer_icon{
-    margin-top: 30px;
-    display: flex;
-    gap: 40px;
-}
-
-.arrow_icon_rotate {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-}
-/* ------------------------------- */
-@media screen and (max-width: 870px) {
-    .nav_links{
-            display: none;
+        .nav_links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
         }
-        nav .icon{
-            display: block;
-        }
-        .details{
-            font-size: 3.2vw;
-        }
-}
-/* ---------------------------------------------------------------- */
 
-        @media screen and (max-width: 620px) {
-        .nav_links{
-            display: none;
-        }
-        nav .icon{
-            display: block;
-        }
-        /* --------------- */
-        .section_one_span{
-            font-size: 6vw;
-        }
-        /* -------------- */
-        .section_one{
-            flex-direction: column;
-        }
-        .details,.picture{
+        .nav_links a:hover::after {
             width: 100%;
         }
-       .picture{
-        display: flex;
-        justify-content: center;
-        padding-left: 0px;
-       }
-       .details{
-        font-size: 5vw;
-       }
-       .details_links{
-        padding: 0;
-       }
-       .details_link{
-        font-size: 3.1vw;
-       border-style: none;
-       }
-       /* --------------------------------- */
-       .arrow_icon{
-        display: block;
-       }
-       /* -------------------------------- */
-       .work{
-        flex-direction: column;
-       }
-       .rentAcar{
-        width: 100%;
-       }
-       .work_btn{
-        position: relative;
-        bottom: 10px;
-        font-size: 8px;
-       }
-       .work_btn:active{
-    background-color: #91BDC3;
-    color: white;
-}
-       /* -------------------------------- */
-       .certificate{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       }
-       /* --------------------------------- */
-       footer{
-        text-align: center;
-       }
-       footer p{
-        padding: 0px 5px;
-       }
-       /* ---------------------------------------- */
-       .about_paragraph {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
 
-.about_shown {
-    max-height: 5000px; /* Set a max-height large enough to cover your content */
-}
+        nav h1 {
+            font-size: 28px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: var(--transition);
+        }
 
-.transition {
-    transition: max-height 0.3s ease;
-}
+        nav .icon {
+            display: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
 
-.transition_reverse {
-    transition: max-height 0.2s ease;
-}
-/* ------------------------------- */
-.section_one_link{
-    display: flex;
-    justify-content: center;
-    font-size: 3.5vw;
-    border: 2px solid black;
-    font-weight: bold;
-}
-    }
+        .nav_links a:hover {
+            color: var(--primary-color);
+        }
 
+        /* Hero Section */
+        .section_one {
+            width: 100%;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5vw;
+            background: linear-gradient(135deg, var(--light-color) 0%, var(--card-bg) 100%);
+        }
+
+        .details {
+            width: 50%;
+            padding-right: 4vw;
+        }
+
+        .details pre {
+            font-family: "Poppins", sans-serif;
+            white-space: pre-wrap;
+            font-size: 2.2vw;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+
+        span {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .section_one_link {
+            display: inline-block;
+            font-size: 1.1vw;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+            transition: var(--transition);
+            transform: translateY(0);
+        }
+
+        .section_one_link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+        }
+
+        .picture {
+            height: 500px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .picture img {
+            max-width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Dropdown Menu */
+        .drop_down_menu {
+            height: 0;
+            width: 200px;
+            position: absolute;
+            top: 80px;
+            right: 5vw;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 99;
+        }
+
+        .drop_down_menu_shown {
+            height: 280px;
+            padding: 20px 0;
+        }
+
+        .drop_down_menu a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .drop_down_menu a:hover {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+
+        /* Sections */
+        .section_two {
+            padding: 6vw 5vw;
+        }
+
+   
+
+        .about {
+            background-color: var(--card-bg);
+            line-height: 1.6;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            
+        }
+
+        .about:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 180, 216, 0.2);
+        }
+
+        .about_top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .about_top h2 {
+            font-size: 28px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .about_top h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            border-radius: 3px;
+        }
+
+        .about_paragraph {
+            font-size: 16px;
+            color: var(--text-light);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .about_shown {
+            max-height: max-content;
+            opacity: 1;
+        }
+
+        .arrow_icon {
+            color: var(--primary-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .arrow_icon_rotate {
+            transform: rotate(180deg);
+        }
+
+        /* Work Section */
+        .work {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 180, 216, 0.3);
+        }
+
+        .work_img {
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .work_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .work_img:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            padding: 20px 20px 10px;
+            font-size: 20px;
+            color: var(--dark-color);
+        }
+
+        .workDetails {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            color: var(--text-light);
+        }
+
+        .workDetailsShown {
+            max-height: 500px;
+            padding: 0 20px 20px;
+        }
+
+        .work_btn {
+            display: block;
+            width: calc(100% - 40px);
+            margin: 20px;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .work_btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+
+        /* Certifications */
+        .certificate {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .certificate:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 180, 216, 0.2);
+        }
+
+        .certificate_img {
+            flex-shrink: 0;
+            width: 160px;
+            height: 160px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certificate h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--accent-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+
+        footer h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--light-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        footer p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer_icon {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .footer_icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .footer_icon a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            .nav_links {
+                width: 60%;
+            }
+            
+            .details pre {
+                font-size: 2.8vw;
+            }
+            
+            .section_one_link {
+                font-size: 1.5vw;
+            }
+        }
+
+        @media screen and (max-width: 870px) {
+            .nav_links {
+                display: none;
+            }
+            
+            nav .icon {
+                display: block;
+            }
+            
+            .details {
+                font-size: 3.2vw;
+            }
+            
+            .section_one_link {
+                font-size: 2vw;
+            }
+
+        
+        }
+
+        @media screen and (max-width: 768px) {
+            .section_one {
+                flex-direction: column;
+                padding: 40px 5vw;
+                text-align: center;
+            }
+            
+            .details, .picture {
+                width: 100%;
+                padding: 0;
+            }
+            
+            .details pre {
+                font-size: 6vw;
+                margin-bottom: 30px;
+            }
+            
+            .section_one_link {
+                font-size: 4vw;
+                margin-bottom: 40px;
+            }
+            
+            .picture {
+                margin-top: 40px;
+            }
+            
+            .certificate {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .certificate_img {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 620px) {
+            nav {
+                height: 70px;
+                padding: 0 20px;
+            }
+            
+            .drop_down_menu {
+                width: calc(100% - 40px);
+                right: 20px;
+            }
+            
+            .work {
+                grid-template-columns: 1fr;
+            }
+            
+            .about, .certificate {
+                padding: 20px;
+            }
+            
+            footer {
+                padding: 60px 20px;
+            }
+            
+            footer h3 {
+                font-size: 28px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
     <div class="container">
-        <nav>
+        <nav id="navbar">
             <h1>Portfolio</h1>
             <div class="nav_links">
                 <a href="#about_main">About</a>
@@ -363,222 +592,292 @@ footer{
            </div>
         </nav>
 
-        <section class="section_one">
+        <section class="section_one animate-fade">
             <div class="details">
                 <pre>
 Hello my name is 
 <span class="section_one_span">Hassan Sheikh</span>
 and i am a Software Engineer
                 </pre>
-                <!-- <div class="one"><a href="#about_main" class="details_link">Learn More</a></div> -->
-                <a href="#about_main" class="section_one_link" class="details_link">Learn More</a>
-
+                <a href="#about_main" class="section_one_link">Learn More</a>
             </div>
 
             <div class="picture">
-<img src="portfolio.png" alt="" height="300px">
+                <!-- <img src="portfolio.png" alt="Hassan Sheikh" height="400px"> -->
+                 <img src="hassan.jpeg" alt="Hassan Sheikh" height="200px">
             </div>
         </section>
 
-
-        <!-- ------------------------------------------ -->
-
         <section class="section_two">
-            <div class="about" id="about_main">
+            <div class="about animate-fade delay-1" id="about_main">
                 <div class="about_top">
                     <h2>About</h2>
-                <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
+                    <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
                 </div>
                 <div class="about_paragraph about_shown">
-                    <p>Hi, I'm Sheikh Muhammad Hassan, a dedicated Software Engineering student from NUML University, currently in my sixth semester. With a strong foundation in programming, I excel in languages like C++, Java, and Python, and I am skilled in web development technologies such as HTML, CSS, JavaScript, and Node.js. I’ve also worked with PHP and have experience using GitHub and Linux (Ubuntu). My hands-on projects include a variety of applications, from interactive websites to practical tools like a password generator. I am passionate about learning and applying new technologies, and I’m excited to continue building and expanding my skills.</p>
+                    <p>I'm Sheikh Muhammad Hassan, a Software Engineering student at NUML University. I have skills in C++ (DSA), Java (including Swing), Python, and JavaScript. In web development, I'm proficient in HTML, CSS, JavaScript, and Node.js, and have some experience with PHP for backend development. I also use GitHub for version control and have basic knowledge of Linux (Ubuntu). Additionally, I work with Docker for containerization, Redis for in-memory data storage, and AWS services such as EC2, S3, Lambda, and DynamoDB for cloud-based application deployment and scalability.</p>
                 </div>
             </div>
-<!-- --------------------------------------------------------- -->
 
-<!-- use same about class here because i am using the same css here that i use in actual about (above) -->
-            <div class="about" id="work_main">
+            <div class="about animate-fade delay-2 work_container" id="work_main">
                 <div class="about_top work_top">
                     <h2>My Work</h2>
-                <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
+                    <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
                 </div>
 
                 <div class="about_paragraph about_shown">
                     <div class="work">
+                        <div class="project-card animate-fade delay-3">
+                            <h3>URL Shortener Service</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/hassan-innovaxel-sheikh/tree/dev" target="_blank"><img src="Link-Shortener-Illustration.jpg" alt="URL Shortener"></a></div>
+                            <button class="btn work_btn">Learn More</button>
+                            <div class="workDetails">
+                                <p>This project is a URL Shortener Service that converts long URLs into short, It's built using the MERN stack (MongoDB, Express.js, React, Node.js), easy-to-share links. It includes a REST API (built with Node.js + Express + MongoDB) to create, manage, and track short URLs. Key features: generating unique short codes, redirecting to original URLs, and providing click statistics. Optionally, a React frontend can be added for user interaction. The API handles all core operations, while the frontend (if included) offers a simple UI to submit and view links. Perfect for learning backend-focuses MERN stack development.</p>
+                            </div>
+                        </div>
 
-                        <div class="rentAcar">
+                        <div class="project-card animate-fade delay-4">
+                            <h3>Blogify</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/blogging-website" target="_blank"><img src="blogging.PNG" alt="Blogify"></a></div>
+                            <button class="btn work_btn">Learn More</button>
+                            <div class="workDetails">
+                                <p>Blogify is a simple and modern blogging website where users can share short, informative posts like quick tech tips or learning notes. It's built using the MERN stack (MongoDB, Express.js, React, Node.js), with a clean and responsive design using HTML and CSS. To improve performance, it uses Redis for caching frequently accessed data. The project follows the MVC architecture, keeping the code well-structured and maintainable. Everything runs smoothly in Docker containers, managed with a single docker-compose.yaml file — this makes it easy to set up, test, and deploy the full application with just one command.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card animate-fade delay-5">
+                            <h3>Anime Fusion</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/anime-fusion" target="_blank"><img src="anime.PNG" alt="Anime Fusion"></a></div>
+                            <button class="btn work_btn">Learn More</button>
+                            <div class="workDetails">
+                                <p>Anime Fusion is a fun and simple web app where users can log in, search for their favorite anime, and view results fetched from a live anime API. The project is built with HTML, CSS, JavaScript, Express.js, and EJS templates, and follows a secure login system using JWT authentication with cookies. It features user registration, profile updates, and protected routes using middleware. The anime search result is rendered dynamically based on user input. Everything is organized using an MVC-like pattern, and the UI is responsive and user-friendly.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card animate-fade">
+                            <h3>Rock Paper Scissors</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/rock-paper-scissors-game" target="_blank"><img src="r-p-s.PNG" alt="Rock Paper Scissors"></a></div>
+                            <button class="btn work_btn">Learn More</button>
+                            <div class="workDetails">
+                                <p>This is a simple Rock Paper Scissors game built using HTML, CSS, JavaScript. The user can choose between rock, paper, or scissors, and the computer randomly selects its choice. The result is then displayed showing whether the user wins, loses, or ties.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card animate-fade">
+                            <h3>Weather App</h3>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/rock-paper-scissors-game" target="_blank"><img src="weatherApp.png" alt="Weather App"></a></div>
+                            <button class="btn work_btn">Learn More</button>
+                            <div class="workDetails">
+                                <p>This Weather App is built using HTML, CSS, and JavaScript. It allows users to search for any city and fetches real-time weather data from a weather API. The app displays key information like temperature, weather conditions, humidity, and wind speed. It's a simple project that demonstrates how to work with APIs and dynamically update the UI based on user input.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card animate-fade">
                             <h3>CorporateHub</h3>
-                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CorporateHub" target="_blank"><img src="java project.PNG" alt=""></a></div>
-                            <button class="btn work_btn">learn more</button>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CorporateHub" target="_blank"><img src="java project.PNG" alt="CorporateHub"></a></div>
+                            <button class="btn work_btn">Learn More</button>
                             <div class="workDetails">
                                 <p>This is an independent project that show my development skills in creating "company management system" from scratch. Utilizing java for both frontend and backend development the system is also connects to a database (JDBC).</p>
                             </div>
                         </div>
     
-                        <div class="rentAcar">
+                        <div class="project-card animate-fade">
                             <h3>Inventory-Management-system</h3>
-                            <div class="work_img"><a href="https://github.com/HassanSheikh993/Inventory-Tracking-Management-system" target="_blank"><img src="dsa project.PNG" alt=""></a></div>
-                            <button class="btn work_btn">learn more</button>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/Inventory-Tracking-Management-system" target="_blank"><img src="dsa project.PNG" alt="Inventory Management"></a></div>
+                            <button class="btn work_btn">Learn More</button>
                             <div class="workDetails">
-                                <p>About
-                                    This is an Group project of 3 semester "Inventory Tracking/Management system" . Utilizing DSA in C++ for development the system.</p>
+                                <p>This is an Group project of 3 semester "Inventory Tracking/Management system". Utilizing DSA in C++ for development the system.</p>
                             </div>
                         </div>
     
-                        <div class="rentAcar">
+                        <div class="project-card animate-fade">
                             <h3>Rent a Car</h3>
-                            <div class="work_img"><a href="https://github.com/HassanSheikh993/Rent-a-car" target="_blank"><img src="rent a car.PNG" alt=""></a></div>
-                            <button class="btn work_btn">learn more</button>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/Rent-a-car" target="_blank"><img src="rent a car.PNG" alt="Rent a Car"></a></div>
+                            <button class="btn work_btn">Learn More</button>
                             <div class="workDetails">
                                 <p>I developed a Rent-A-Car front-end website utilizing HTML, CSS, JavaScript, and jQuery. The project incorporates both grid and flex layouts for responsive and adaptive design. JavaScript and jQuery are used for dynamic content and DOM manipulation to enhance user interactions. The website showcases my skills in creating interactive and visually appealing web pages.</p>
                             </div>
                         </div>
 
-                        <div class="rentAcar">
+                        <div class="project-card animate-fade">
                             <h3>CognoRise-Infotech</h3>
-                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech" target="_blank"><img src="python project.PNG" alt=""></a></div>
-                            <button class="btn work_btn">learn more</button>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech" target="_blank"><img src="python project.PNG" alt="CognoRise Infotech"></a></div>
+                            <button class="btn work_btn">Learn More</button>
                             <div class="workDetails">
                                 <p>During my internship at CognoRise-Infotech, I developed several basic Python programs to enhance my skills. These projects included a password generator, a dice rolling simulator, a Rock-Paper-Scissors game, and a calculator. These projects helped me practice fundamental programming concepts and improve my coding abilities.</p>
                             </div>
                         </div>
 
-                        <div class="rentAcar">
+                        <div class="project-card animate-fade">
                             <h3>Password generator</h3>
-                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech/blob/main/Password_generator.py" target="_blank"><img src="password_generator.jpg" alt=""></a></div>
-                            <button class="btn work_btn">learn more</button>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech/blob/main/Password_generator.py" target="_blank"><img src="password_generator.jpg" alt="Password Generator"></a></div>
+                            <button class="btn work_btn">Learn More</button>
                             <div class="workDetails">
-                                <p>The password generator program is written in Python and creates strong, customizable passwords. It uses lists of alphabets, capital letters, numbers, and special characters to generate passwords based on user-defined length and complexity. Users can choose between "easy," "normal," and "hard" difficulty levels, each with different proportions of character types. The program ensures that the generated password meets the length and complexity requirements by filling in any remaining characters. Finally, it shuffles the characters to create a secure password and prints the result.
-                                </p>
+                                <p>The password generator program is written in Python and creates strong, customizable passwords. It uses lists of alphabets, capital letters, numbers, and special characters to generate passwords based on user-defined length and complexity. Users can choose between "easy," "normal," and "hard" difficulty levels, each with different proportions of character types. The program ensures that the generated password meets the length and complexity requirements by filling in any remaining characters. Finally, it shuffles the characters to create a secure password and prints the result.</p>
                             </div>
                         </div>
 
-                        <div class="rentAcar">
+                        <div class="project-card animate-fade">
                             <h3>Coffee Machine</h3>
-                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech/blob/main/coffee_order.py" target="_blank"><img src="coffee mechine project.jpg" alt=""></a></div>
-                            <button class="btn work_btn">learn more</button>
+                            <div class="work_img"><a href="https://github.com/HassanSheikh993/CognoRise-Infotech/blob/main/coffee_order.py" target="_blank"><img src="coffee mechine project.jpg" alt="Coffee Machine"></a></div>
+                            <button class="btn work_btn">Learn More</button>
                             <div class="workDetails">
                                 <p>This Python program simulates a coffee machine that offers three types of drinks: latte, black coffee, and ice coffee. The program keeps track of available resources (water, coffee, milk) and calculates the cost of each drink. Users can place orders, check the availability of resources, and view the total profit made. The program ensures that sufficient resources are available before making a drink and handles payment transactions, including giving back change if necessary.</p>
                             </div>
                         </div>
-    
                     </div>
                 </div>
-
             </div>
 
-            <!-- -------------------------------------------- -->
-                <div class="about" id="certifications_main">
-                    <div class="about_top">
-                        <h2>Licenses & certifications</h2>
+            <div class="about animate-fade" id="certifications_main">
+                <div class="about_top">
+                    <h2>Licenses & Certifications</h2>
                     <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
-                    </div>
-                    <div class="certificate">
-                        <div class="certificate_img">
-                 <img src="Sheikh Muhammad Hassan - Python.png" alt="" height="160px">
-                        </div>
-                        <div class="about_paragraph about_shown">
-                            <h3>Python By kaggle</h3>
-                            <p>I completed a comprehensive Python course on Kaggle, which covered the fundamentals of Python programming. This course included essential topics such as how Python works, functions, loops, and list comprehensions, as well as working with lists, strings, and dictionaries. Additionally, it provided an introduction to using external libraries, equipping me with a solid understanding of Python's core concepts and practical applications.</p>
-                        </div>
-                    </div>      
                 </div>
-                <!-- ---------------------------------------------------- -->
-                <div class="about" id="internship_main">
-                    <div class="about_top">
-                        <h2>Internships</h2>
+                <div class="certificate animate-fade">
+                    <div class="certificate_img">
+                        <img src="Sheikh Muhammad Hassan - Python.png" alt="Python Certification">
+                    </div>
+                    <div class="about_paragraph about_shown">
+                        <h3>Python By Kaggle</h3>
+                        <p>I completed a comprehensive Python course on Kaggle, which covered the fundamentals of Python programming. This course included essential topics such as how Python works, functions, loops, and list comprehensions, as well as working with lists, strings, and dictionaries. Additionally, it provided an introduction to using external libraries, equipping me with a solid understanding of Python's core concepts and practical applications.</p>
+                    </div>
+                </div>     
+
+                <div class="certificate animate-fade">
+                    <div class="certificate_img">
+                        <img src="Sheikh Muhammad Hassan - Pandas.png" alt="Pandas Certification">
+                    </div>
+                    <div class="about_paragraph about_shown">
+                        <h3>Pandas By Kaggle</h3>
+                        <p>I completed a comprehensive pandas course on Kaggle, which covered the fundamentals of Pandas.</p>
+                    </div>
+                </div>   
+
+                <div class="certificate animate-fade">
+                    <div class="certificate_img">
+                        <img src="postman.PNG" alt="Postman Certification">
+                    </div>
+                    <div class="about_paragraph about_shown">
+                        <h3>Postman</h3>
+                        <p>I have completed the official Postman course that covers the fundamentals of API testing and collaboration. Learned how to create requests, use collections, run tests, and automate workflows using Postman tools.</p>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="about animate-fade" id="internship_main">
+                <div class="about_top">
+                    <h2>Internships</h2>
                     <i class="arrow_icon fa-solid fa-angle-up fa-xl"></i>
-                    </div>
-                    <div class="certificate">
-                        <div class="certificate_img">
-                 <img src="Certificate (1) (1).jpg" alt="" height="300px">
-                        </div>
-                        <div class="about_paragraph about_shown">
-                            <h3>Interns Pakistan</h3>
-                            <p>I completed a front-end development internship at Interns Pakistan, where I honed my skills in HTML, CSS, JavaScript, and PHP. During this internship, I also learned jQuery and practiced making websites responsive. This experience provided me with practical knowledge in building user-friendly and visually appealing web pages, enhancing my web development capabilities significantly.</p>
-                        </div>
-                    </div>      
                 </div>
+                <div class="certificate animate-fade">
+                    <div class="certificate_img">
+                        <img src="Certificate (1) (1).jpg" alt="Internship Certificate">
+                    </div>
+                    <div class="about_paragraph about_shown">
+                        <h3>Interns Pakistan</h3>
+                        <p>I completed a front-end development internship at Interns Pakistan, where I honed my skills in HTML, CSS, JavaScript, and PHP. During this internship, I also learned jQuery and practiced making websites responsive. This experience provided me with practical knowledge in building user-friendly and visually appealing web pages, enhancing my web development capabilities significantly.</p>
+                    </div>
+                </div>      
+            </div>
         </section>
-        <!-- ------------------------------------------------------- -->
-         <footer id="footer_main">
+
+        <footer id="footer_main" class="animate-fade">
             <h3>Hassan Portfolio</h3>
             <p>Feel free to contact me through the following platforms</p>
             <div class="footer_icon">
-                <a href="https://www.instagram.com/its_hassan_09/" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                <a href="https://github.com/HassanSheikh993" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
-           <a href="https://www.linkedin.com/in/hassan-sheikh993/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-           <a href="https://discord.com/channels/@me" target="_blank"><i class="fa-brands fa-discord fa-xl"></i></a>
+                <a href="https://www.instagram.com/its_hassan_09/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/HassanSheikh993" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/hassan-sheikh993/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://discord.com/channels/@me" target="_blank"><i class="fa-brands fa-discord"></i></a>
             </div>
-         </footer>
+        </footer>
     </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Dropdown menu toggle
+        let dropDownMenu = document.querySelector(".drop_down_menu");
+        let iconButton = document.querySelector(".icon");
+
+        iconButton.addEventListener("click", () => {
+            dropDownMenu.classList.toggle("drop_down_menu_shown");
+        });
+
+        // About section toggle
+        document.querySelectorAll(".about").forEach(about => {
+            const arrow_icon = about.querySelector(".arrow_icon");
+            const paragraph = about.querySelector(".about_paragraph");
+
+            arrow_icon.addEventListener("click", () => {
+                paragraph.classList.toggle("about_shown");
+                arrow_icon.classList.toggle("arrow_icon_rotate");
+            });
+
+            arrow_icon.addEventListener("touchstart", (e) => {
+                e.preventDefault();
+                paragraph.classList.toggle("about_shown");
+                arrow_icon.classList.toggle("arrow_icon_rotate");
+            });
+        });
+
+        // Work details toggle
+        document.querySelectorAll(".project-card").forEach(card => {
+            const btn = card.querySelector(".work_btn");
+            const details = card.querySelector(".workDetails");
+            
+            btn.addEventListener("click", () => {
+                details.classList.toggle("workDetailsShown");
+                btn.textContent = details.classList.contains("workDetailsShown") ? "Show Less" : "Learn More";
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close dropdown menu if open
+                if (dropDownMenu.classList.contains("drop_down_menu_shown")) {
+                    dropDownMenu.classList.remove("drop_down_menu_shown");
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate-fade');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
 </body>
-
-
-<script>
-//     let aboutElements = document.querySelectorAll(".about");
-//     aboutElements.forEach(about => {
-//         const arrow_icon = about.querySelector(".arrow_icon");
-//         const paragraph = about.querySelector(".about_paragraph");
-
-//         arrow_icon.addEventListener("click",()=>{
-//             paragraph.classList.toggle("about_shown");
-//             paragraph.classList.remove("transition_reverse");
-//             paragraph.classList.add("transition");
-//             arrow_icon.classList.toggle("arrow_icon_rotate");
-//         });
-//     });
-    
-//     document.querySelectorAll(".arrow_icon").forEach(icon => {
-//     icon.addEventListener("touchstart", (e) => {
-//         e.preventDefault(); // Prevent default touch behavior
-//         icon.classList.toggle("arrow_icon_rotate");
-//     });
-// });
-    // ------------------------------------
-document.querySelectorAll(".about").forEach(about => {
-    const arrow_icon = about.querySelector(".arrow_icon");
-    const paragraph = about.querySelector(".about_paragraph");
-
-    arrow_icon.addEventListener("click", () => {
-        paragraph.classList.toggle("about_shown");
-        paragraph.classList.remove("transition_reverse");
-        paragraph.classList.add("transition");
-        arrow_icon.classList.toggle("arrow_icon_rotate");
-    });
-
-    arrow_icon.addEventListener("touchstart", (e) => {
-        e.preventDefault(); // Prevent default touch behavior
-        paragraph.classList.toggle("about_shown");
-        paragraph.classList.remove("transition_reverse");
-        paragraph.classList.add("transition");
-        arrow_icon.classList.toggle("arrow_icon_rotate");
-    });
-});
-
-    // -----------------------------------
-
-    let dropDownMenu = document.querySelector(".drop_down_menu");
-    let iconButton = document.querySelector(".icon");
-
-    iconButton.addEventListener("click",()=>{
-        dropDownMenu.classList.toggle("drop_down_menu_shown")
-    })
-
-    let rentAcar = document.querySelectorAll(".rentAcar");
-
-    rentAcar.forEach(rent=>{
-        const btn = rent.querySelector(".btn")
-        const details = rent.querySelector(".workDetails");
-        btn.addEventListener("click",()=>{
-        details.classList.toggle("workDetailsShown");
-        })
-    })
-
-//   --------------------------------------------
-
-
-
-  
-</script>
-
 </html>
